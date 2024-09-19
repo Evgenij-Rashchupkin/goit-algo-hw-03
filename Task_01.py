@@ -1,9 +1,7 @@
 from datetime import datetime
 
 
-def get_days_from_today():
-    given_date = input("Введіть дату у форматі YYYY-MM-DD: ")  # введення дати користувачем
-
+def get_days_from_today(given_date):
     try:
         given_date = datetime.strptime(given_date, "%Y-%m-%d").date()  # введений рядок на об'єкт datetime
     except ValueError:
@@ -19,5 +17,4 @@ def get_days_from_today():
     return diff_day.days
 
 
-result = get_days_from_today()
-print(result)
+print(get_days_from_today("2024-11-16"))
